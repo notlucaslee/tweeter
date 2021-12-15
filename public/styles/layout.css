@@ -29,9 +29,23 @@ body {
  */
 
  .container {
-  display: flex;
   background-color: #f4f1ec;
   width: 90%;
-  justify-content: center;
-  flex-direction: column;
+  display: flex;
+  padding: 1.5em;
+ }
+
+ .tweet-companions {
+  font-family: 'Bungee', cursive;
+  display: flex;
+  justify-content: space-between;
+ }
+
+.tweet {
+  background-color: #4056A1;
+  color: #FFFFFF;
+ }
+
+ textarea {
+   width: 100%;
  }
