@@ -20,8 +20,10 @@ head {
 body {
   color: #545149;
   background-color: #f4f1ec;
+  background-image: url("https://www.transparenttextures.com/patterns/dotnoise-light-grey.png");
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
 }
 
 /*
@@ -29,10 +31,25 @@ body {
  */
 
  .container {
-  background-color: #f4f1ec;
-  width: 90%;
   display: flex;
-  padding: 1.5em;
+  align-items: center;
+  flex-direction: column;
+ }
+
+ .profile {
+   width: 300px;
+   height: 600px;
+   background-color: #FFFFFF;
+ } 
+
+.accent-box {
+   height: 100px;
+   background-color: #4056A1;
+   position: absolute;
+ }
+
+ .new-tweet {
+   width: 35%;
  }
 
  .tweet-companions {
@@ -48,4 +65,9 @@ body {
 
  textarea {
    width: 100%;
+   background-color: transparent;
+   border-color: gray;
+   
  }
+
+

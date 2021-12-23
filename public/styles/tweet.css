@@ -1,0 +1,27 @@
+.tweet-container {
+  border: solid gray;
+  width: 35%;
+  margin-top: 10px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.75em;
+  margin-bottom: 0.5em;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 200;
+}
+
+p {
+  border-bottom: solid gray;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  padding-bottom: 0.5em;
+}
