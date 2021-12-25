@@ -1,0 +1,22 @@
+.new-tweet {
+  width: 35%;
+  margin-bottom: 1em;;
+}
+
+.tweet-companions {
+ font-family: 'Bungee', cursive;
+ display: flex;
+ justify-content: space-between;
+}
+
+.tweet {
+ background-color: #4056A1;
+ color: #FFFFFF;
+}
+
+textarea {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 3px gray;
+}

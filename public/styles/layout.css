@@ -48,26 +48,5 @@ body {
    position: absolute;
  }
 
- .new-tweet {
-   width: 35%;
- }
-
- .tweet-companions {
-  font-family: 'Bungee', cursive;
-  display: flex;
-  justify-content: space-between;
- }
-
-.tweet {
-  background-color: #4056A1;
-  color: #FFFFFF;
- }
-
- textarea {
-   width: 100%;
-   background-color: transparent;
-   border-color: gray;
-   
- }
 
 
