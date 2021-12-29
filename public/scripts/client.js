@@ -24,7 +24,7 @@ const data = [
       "avatars": "https://i.imgur.com/nlhLi3I.png",
       "handle": "@rd" },
     "content": {
-      "text": "Je pense , donc je suis"
+      "text": "Je pense, donc je suis"
     },
     "created_at": 1461113959088
   }
@@ -66,4 +66,18 @@ const renderData = function(array) {
 //Calling renderData function
 $(document).ready(function() {
   renderData(data);
+  $('#post-tweet').submit(function(event) {
+    event.preventDefault();
+    console.log("submitted");
+    const data = $(this).serialize();
+    console.log(data)
+    $.ajax({
+      url: "/tweets",
+      type: "POST",
+      data: data
+    })
+    .then(function(tweetData) {
+      console.log(tweetData);
+    })
+  })
 })
