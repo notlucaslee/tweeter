@@ -41,18 +41,25 @@ $(document).ready(function() {
 
   $('#post-tweet').submit(function(event) {
     event.preventDefault();
-    console.log("submitted");
-    const data = $(this).serialize();
-    console.log(data)
-    $.ajax({
-      url: "/tweets",
-      method: "POST",
-      data
+    if ($('#tweet-text').val() === "" || $('#tweet-text').val() === null) {
+      alert("Tweet must not be blank.");
+    } else if ($('#tweet-text').val().length > 140) {
+      alert("Tweet must be fewer than 140 characters.");
+    } else {
+      const data = $(this).serialize();
+      console.log(data)
+      $.ajax({
+        url: "/tweets",
+        method: "POST",
+        data
+      })
+      .then(function() {
+        //loadTweets();
+      })
+    }
     })
-    .then(function(tweetData) {
-      console.log(tweetData);
-    })
-  })
+    
+
 
   const loadTweets = function() {
     $.ajax({
