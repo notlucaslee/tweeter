@@ -4,32 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-//fake temp db
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense, donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
 //Take content from mock tweet database and create HTML tweet elements
 const createTweetElements = function(tweet) {
 
@@ -45,14 +19,13 @@ const createTweetElements = function(tweet) {
   <p>${tweet["content"]["text"]}</p>
   
   <footer>
-    <span>${tweet["created_at"]}</span>
+    <span>${timeago.format(tweet["created_at"])}</span>
     <div class="icons">
     <i class="fa-regular fa-star"></i>
     <i class="fa-regular fa-heart"></i>
   </div>
   </footer>
 </article>`;
-
 return $tweet;
 };
 
@@ -65,7 +38,7 @@ const renderData = function(array) {
 
 //Calling renderData function
 $(document).ready(function() {
-  renderData(data);
+
   $('#post-tweet').submit(function(event) {
     event.preventDefault();
     console.log("submitted");
@@ -73,11 +46,23 @@ $(document).ready(function() {
     console.log(data)
     $.ajax({
       url: "/tweets",
-      type: "POST",
-      data: data
+      method: "POST",
+      data
     })
     .then(function(tweetData) {
       console.log(tweetData);
     })
   })
+
+  const loadTweets = function() {
+    $.ajax({
+      url: "/tweets",
+      method: "GET"
+    })
+    .then(function(tweets) {
+      renderData(tweets)
+    });
+  }
+
+  loadTweets();
 })
