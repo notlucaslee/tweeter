@@ -7,8 +7,8 @@
 //Take content from mock tweet database and create HTML tweet elements
 const createTweetElements = function(tweet) {
 
-  let $tweet = 
-  `<article class="tweet-container">
+  let $tweet =
+  `<article class="user-tweet">
   <header>
     <span>
       <img src="${tweet['user']['avatars']}" width="30px;" height="21.8px;">
@@ -26,14 +26,18 @@ const createTweetElements = function(tweet) {
   </div>
   </footer>
 </article>`;
-return $tweet;
+  return $tweet;
 };
 
 //loop through fake db and append new node for each tweet
 const renderData = function(array) {
   for (let tweet of array) {
-    $(".container").append(createTweetElements(tweet));
+    $("#tweet-container").append(createTweetElements(tweet));
   }
+};
+
+const clearTweets = function() {
+  $("#tweet-container").empty();
 }
 
 //Calling renderData function
@@ -47,29 +51,28 @@ $(document).ready(function() {
       alert("Tweet must be fewer than 140 characters.");
     } else {
       const data = $(this).serialize();
-      console.log(data)
+      console.log(data);
       $.ajax({
         url: "/tweets",
         method: "POST",
         data
       })
-      .then(function() {
-        //loadTweets();
-      })
+        .then(function() {
+          clearTweets();
+          loadTweets();
+        });
     }
-    })
+  });
     
-
-
   const loadTweets = function() {
     $.ajax({
       url: "/tweets",
       method: "GET"
     })
-    .then(function(tweets) {
-      renderData(tweets)
-    });
-  }
+      .then(function(tweets) {
+        renderData(tweets);
+      });
+  };
 
   loadTweets();
-})
+});

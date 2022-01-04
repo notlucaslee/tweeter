@@ -1,6 +1,5 @@
-.tweet-container {
+.user-tweet {
   border: solid gray;
-  width: 35%;
   margin-top: 10px;
   padding-left: 0.5em;
   padding-right: 0.5em;
