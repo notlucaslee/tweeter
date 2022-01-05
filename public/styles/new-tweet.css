@@ -20,3 +20,7 @@ textarea {
   border: none;
   border-bottom: solid 3px gray;
 }
+
+.red-counter {
+  color: #9c1e1e
+}
