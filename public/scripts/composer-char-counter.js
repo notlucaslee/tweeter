@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
   $("#tweet-text").on('keyup', function() {
-    console.log($(this).val().length);
+    const count = $(this).parent().find(".counter")
+    count.text(140 - $(this).val().length)
   });
 });

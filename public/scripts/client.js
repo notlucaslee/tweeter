@@ -16,17 +16,24 @@ const createTweetElements = function(tweet) {
     </span>
     <span>${tweet["user"]["handle"]}</span>
   </header>
-  <p>${tweet["content"]["text"]}</p>
+  <p>${escapeXss(tweet["content"]["text"])}</p>
   
   <footer>
     <span>${timeago.format(tweet["created_at"])}</span>
     <div class="icons">
-    <i class="fa-regular fa-star"></i>
-    <i class="fa-regular fa-heart"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-heart"></i>
   </div>
   </footer>
 </article>`;
   return $tweet;
+};
+
+//escape function to stop xss
+const escapeXss = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 };
 
 //loop through fake db and append new node for each tweet

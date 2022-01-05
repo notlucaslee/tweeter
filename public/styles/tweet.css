@@ -5,6 +5,11 @@
   padding-right: 0.5em;
 }
 
+.user-tweet:hover {
+  box-shadow: 7px 5px 5px #4d5d91;
+}
+
+
 header {
   display: flex;
   justify-content: space-between;
@@ -23,4 +28,16 @@ footer {
   justify-content: space-between;
   font-size: 13px;
   padding-bottom: 0.5em;
+}
+
+.icons {
+  color: gray
+}
+
+.fa-star:hover {
+  color: goldenrod
+}
+
+.fa-heart:hover {
+  color: #9c1e1e
 }
