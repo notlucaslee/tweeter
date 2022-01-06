@@ -1,13 +1,14 @@
-/*
-header {
+#body-header {
   display: flex;
+  margin-top: 80px;
   height: 400px;
-  background-color: darkgoldenrod;
+  width: 100vw;
+  background-color: #f2af1d;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
   background-image: url("https://www.transparenttextures.com/patterns/dotnoise-light-grey.png");
+  color: white
 }
 
-*/
 

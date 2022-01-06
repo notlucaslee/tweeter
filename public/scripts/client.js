@@ -51,14 +51,20 @@ const clearTweets = function() {
 $(document).ready(function() {
 
   $('#post-tweet').submit(function(event) {
+    //Prevent default behaviour
     event.preventDefault();
-    if ($('#tweet-text').val() === "" || $('#tweet-text').val() === null) {
+
+    const textField = $('#tweet-text');
+
+    //reset counter
+    $(".counter").text(140);
+
+    if (textField.val() === "" || textField.val() === null) {
       alert("Tweet must not be blank.");
-    } else if ($('#tweet-text').val().length > 140) {
+    } else if (textField.val().length > 140) {
       alert("Tweet must be fewer than 140 characters.");
     } else {
       const data = $(this).serialize();
-      console.log(data);
       $.ajax({
         url: "/tweets",
         method: "POST",
@@ -67,6 +73,7 @@ $(document).ready(function() {
         .then(function() {
           clearTweets();
           loadTweets();
+          textField.text("What are you humming about?");
         });
     }
   });
@@ -77,7 +84,7 @@ $(document).ready(function() {
       method: "GET"
     })
       .then(function(tweets) {
-        renderData(tweets);
+        renderData(tweets.reverse());
       });
   };
 

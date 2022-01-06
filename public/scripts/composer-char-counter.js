@@ -6,6 +6,8 @@ $(document).ready(function() {
     count.text(currentCount);
     if (currentCount < 0) {
       count.addClass("red-counter");
+    } else {
+      count.removeClass("red-counter");
     }
   });
 
