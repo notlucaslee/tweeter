@@ -51,7 +51,11 @@ main {
    width: 100%;
  }
 
+/*
+Adding responsive design, displaying page content side by side when width 1024 pixels or fewer
 
+* Note: responsive header css in header.css file to avoid header.css rules overwriting ones below
+*/
  @media screen and (min-width: 1024px) {
     .main-content {
       overflow: hidden;

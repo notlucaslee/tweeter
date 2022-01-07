@@ -43,6 +43,7 @@ const renderData = function(array) {
   }
 };
 
+//clear tweets
 const clearTweets = function() {
   $("#tweet-container").empty();
 }
@@ -57,12 +58,19 @@ $(document).ready(function() {
     const textField = $('#tweet-text');
 
     //reset counter
+    $(".counter").removeClass("red-counter");
     $(".counter").text(140);
 
+    //reset error
+    $("#error").hide();
+   
+
     if (textField.val() === "" || textField.val() === null) {
-      alert("Tweet must not be blank.");
+      $("#error").slideDown("fast")
+      $("#error").text("Tweet must not be blank.")
     } else if (textField.val().length > 140) {
-      alert("Tweet must be fewer than 140 characters.");
+      $("#error").slideDown("fast")
+      $("#error").text("Tweet must be fewer than 140 characters.")
     } else {
       const data = $(this).serialize();
       $.ajax({
@@ -77,7 +85,8 @@ $(document).ready(function() {
         });
     }
   });
-    
+  
+  //Declaring this function in DOM function as per Compass instructions
   const loadTweets = function() {
     $.ajax({
       url: "/tweets",
@@ -88,5 +97,6 @@ $(document).ready(function() {
       });
   };
 
+  //Loading tweets on page start-up
   loadTweets();
 });

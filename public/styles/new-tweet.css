@@ -1,4 +1,5 @@
 .new-tweet {
+  margin-top: 80px;
   margin-bottom: 1em;
   width: 100%;
   margin-left: 1em;
@@ -25,4 +26,12 @@ textarea {
 
 .red-counter {
   color: #9c1e1e
+}
+
+#error {
+  margin-top: 1em;
+  border: solid red;
+  padding: 1em;
+  color: red;
+  display: none;
 }

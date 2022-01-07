@@ -38,7 +38,9 @@
       </div>
     </nav>
 
+    <!--Div added to separate header and rest of main contents to manipulate flex direction in responsive design-->
     <div class="main-content">
+
     <header id="body-header">
       <div>
           <img src="/images/profile-hex.png"> 
@@ -50,7 +52,13 @@
 
     <!-- Page-specific (main) content here -->
     <main>
+
       <section class="new-tweet">
+
+        <!--Error element that is hidden by default-->
+        <div id="error">
+        </div>
+
         <h4>Compose Tweet</h4>
         <form id="post-tweet" action="/tweets" method=POST>
           <label for="tweet-text"></label>
@@ -61,9 +69,10 @@
           </div>
         </form>
       </section>
-
+      <!--Section containing all tweets-->
       <section id="tweet-container">
-      <!---
+
+      <!--A placeholder tweet that I'm leaving for funsies-->
       <article class="user-tweet">
         <header>
           <span>
@@ -82,7 +91,7 @@
         </div>
         </footer>
       </article>
-    -->
+
     </section>
     </main>
   </div>
