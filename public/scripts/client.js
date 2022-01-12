@@ -79,9 +79,9 @@ $(document).ready(function() {
         data
       })
         .then(function() {
+          textField.val("");
           clearTweets();
           loadTweets();
-          textField.text("What are you humming about?");
         });
     }
   });
