@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $("#tweet-text").on('keyup', function() {
+  $("#tweet-text").on('input', function() {
     const count = $(this).parent().find(".counter");
     const currentCount = 140 - $(this).val().length;
     count.text(currentCount);
