@@ -16,3 +16,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+
+![As desktop app](https://github.com/notlucaslee/tweeter/blob/master/docs/Desktop%20Tweeter.png)
+![As mobile app](https://github.com/notlucaslee/tweeter/blob/master/docs/Mobile%20Tweeter.png)
+![As tablet app](https://github.com/notlucaslee/tweeter/blob/master/docs/Tablet%20Tweeter.png)
